@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="server_name" value="wzry-wallpaper" />
+    <property name="server_name" value="wzry2" />
     <property name="log_dir" value="./logs/" />
     <property name="maxFileSize" value="10MB" />
     <property name="maxHistory" value="30" />
