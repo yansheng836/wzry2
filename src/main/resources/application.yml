@@ -1,0 +1,22 @@
+spring: 
+  thymeleaf:
+    #缓冲的配置
+    cache: false 
+    check-template: true
+    check-template-location: true
+    #开启MVC thymeleaf 视图解析
+    enabled: true
+    encoding: utf-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+# Logger Config
+logging:
+  #config不用也可以扫描到
+  #config: classpath:logback-spring.xml
+  level:
+    xyz.yansheng.wzrywallpaper: info
+
+ # 配置访问地址
+server:
+  port: 8089
