@@ -6,8 +6,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import xyz.yansheng.wzry2.bean.Hero;
 import xyz.yansheng.wzry2.dao.HeroDao;
-import xyz.yansheng.wzry2.entity.Hero;
 import xyz.yansheng.wzry2.service.HeroService;
 
 /**
@@ -18,6 +18,7 @@ import xyz.yansheng.wzry2.service.HeroService;
  */
 @Service("heroService")
 public class HeroServiceImpl implements HeroService {
+
     @Resource
     private HeroDao heroDao;
 
@@ -82,6 +83,7 @@ public class HeroServiceImpl implements HeroService {
      */
     @Override
     public boolean deleteById(Integer ename) {
+
         return this.heroDao.deleteById(ename) > 0;
     }
 }

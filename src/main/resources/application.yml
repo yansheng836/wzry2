@@ -10,8 +10,15 @@ logging:
   #config不用也可以扫描到
   #config: classpath:logback-spring.xml
   level:
-    xyz.yansheng.wzry2: info
+    xyz.yansheng.wzry2: debug
 
- # 配置访问地址
+mybatis:
+  # model的包
+#  type-aliases-package: xyz.yansheng.wzry2.bean
+  mapper-locations: classpath:mapper/*Dao.xml
+  configuration:
+  # 开启驼峰uName自动映射到u_name
+    map-underscore-to-camel-case: true
+     # 配置访问地址
 server:
   port: 8090

@@ -21,7 +21,10 @@ import xyz.yansheng.wzry2.bean.Hero;
 public class SpiderUtil {
 
     public static void main(String[] args) {
-        getHeroList();
+        List<Hero> heroList = getHeroList();
+        for (Hero hero : heroList) {
+            log.debug(hero.toString());
+        }
     }
 
     /**
@@ -30,7 +33,7 @@ public class SpiderUtil {
      * @param
      * @return
      */
-    public static void getHeroList() {
+    public static List<Hero> getHeroList() {
 
         // String jsonUrl = "https://pvp.qq.com/web201605/js/herolist.json";
         String path = "H:\\Workspaces\\MyEclipse2017\\wzry2\\src\\main\\resources\\static\\herolist.json";
@@ -40,13 +43,16 @@ public class SpiderUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        log.debug(jsonListString);
+        // log.debug(jsonListString);
 
         List<Hero> heroList = JSON.parseArray(jsonListString, Hero.class);
+        log.debug("size:{}", heroList.size());
         assert heroList != null;
-        for (Hero hero : heroList) {
-            log.debug(hero.toString());
-        }
+        // for (Hero hero : heroList) {
+        // log.debug(hero.toString());
+        // }
+
+        return heroList;
 
     }
 }

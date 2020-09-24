@@ -2,6 +2,7 @@ package xyz.yansheng.wzry2.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import xyz.yansheng.wzry2.bean.Hero;
 
@@ -11,6 +12,7 @@ import xyz.yansheng.wzry2.bean.Hero;
  * @author makejava
  * @since 2020-09-24 23:34:26
  */
+@Mapper
 public interface HeroDao {
 
     /**

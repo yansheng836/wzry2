@@ -1,9 +1,8 @@
 package xyz.yansheng.wzry2.service;
 
-import xyz.yansheng.wzry2.bean.Hero;
-
 import java.util.List;
 
+import xyz.yansheng.wzry2.bean.Hero;
 
 /**
  * (Hero)表服务接口
