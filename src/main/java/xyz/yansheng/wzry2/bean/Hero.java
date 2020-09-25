@@ -7,6 +7,16 @@ import lombok.NoArgsConstructor;
 /**
  * 英雄实体类： https://pvp.qq.com/web201605/js/herolist.json
  *
+ * {
+ *         "ename": 107,
+ *         "cname": "赵云",
+ *         "title": "苍天翔龙",
+ *         "new_type": 0,
+ *         "hero_type": 1,
+ *         "hero_type2": 4,
+ *         "skin_name": "苍天翔龙|忍●炎影|未来纪元|皇家上将|嘻哈天王|白执事|引擎之心"
+ *     },
+ *
  * @author yansheng
  * @date 2020/9/24
  */
