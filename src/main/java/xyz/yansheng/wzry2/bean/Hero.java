@@ -54,4 +54,17 @@ public class Hero {
      */
     private String skinName;
 
+    /**
+     * 将实体类中的null替换为默认值，如：0，""
+     */
+    public Hero replaceNull() {
+
+        this.setNewType((newType != null) ? newType : 0);
+        this.setHeroType((heroType != null) ? heroType : 0);
+        this.setHeroType2((heroType2 != null) ? heroType2 : 0);
+        this.setSkinName((skinName != null) ? skinName : "");
+
+        return this;
+    }
+
 }

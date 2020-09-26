@@ -12,7 +12,6 @@ import xyz.yansheng.wzry2.bean.Hero;
  * @author makejava
  * @since 2020-09-24 23:34:26
  */
-@Mapper
 public interface HeroDao {
 
     /**
