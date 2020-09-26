@@ -6,8 +6,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import xyz.yansheng.wzry2.dao.SkinDao;
 import xyz.yansheng.wzry2.bean.Skin;
+import xyz.yansheng.wzry2.dao.SkinDao;
 import xyz.yansheng.wzry2.service.SkinService;
 
 /**
@@ -30,7 +30,21 @@ public class SkinServiceImpl implements SkinService {
      */
     @Override
     public Skin queryById(Integer ename) {
+
         return this.skinDao.queryById(ename);
+    }
+
+    /**
+     * 通过2个ID查询单条数据
+     *
+     * @param ename
+     *            主键
+     * @param skinId
+     * @return 实例对象
+     */
+    @Override
+    public Skin queryBy2Id(Integer ename, Integer skinId) {
+        return this.skinDao.queryBy2Id(ename,skinId);
     }
 
     /**

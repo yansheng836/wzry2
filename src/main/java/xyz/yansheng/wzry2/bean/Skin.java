@@ -1,5 +1,7 @@
 package xyz.yansheng.wzry2.bean;
 
+import java.util.Objects;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -116,4 +118,20 @@ public class Skin {
         this.wallpaperBigskinUrl = PREFIX_URL + WALLPAPER_MIDDLE_URL + twoEname + BIG_SKIN + skinId + SUFFIX_URL;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
+        Skin skin = (Skin)o;
+        return ename.equals(skin.ename) && skinId.equals(skin.skinId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ename, skinId);
+    }
 }

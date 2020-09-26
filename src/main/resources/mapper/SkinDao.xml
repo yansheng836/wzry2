@@ -27,6 +27,21 @@
         where ename = #{ename}
     </select>
 
+    <!--查询单个-->
+    <select id="queryBy2Id" resultMap="SkinMap">
+        select ename,
+               skin_id,
+               skin_name,
+               phone_smallskin_url,
+               phone_mobileskin_url,
+               phone_bigskin_url,
+               wallpaper_mobileskin_url,
+               wallpaper_bigskin_url
+        from wzry.skin
+        where ename = #{ename} and skin_id = #{skinId}
+
+    </select>
+
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="SkinMap">
         select ename,
@@ -75,11 +90,12 @@
         </where>
     </select>
 
+
     <!--新增所有列-->
-    <insert id="insert" keyProperty="ename" useGeneratedKeys="true">
-        insert into wzry.skin(skin_name, phone_smallskin_url, phone_mobileskin_url, phone_bigskin_url,
+    <insert id="insert">
+        insert into wzry.skin(ename,skin_id, skin_name, phone_smallskin_url, phone_mobileskin_url, phone_bigskin_url,
                               wallpaper_mobileskin_url, wallpaper_bigskin_url)
-        values (#{skinName}, #{phoneSmallskinUrl}, #{phoneMobileskinUrl}, #{phoneBigskinUrl}, #{wallpaperMobileskinUrl},
+        values (#{ename}, #{skinId}, #{skinName}, #{phoneSmallskinUrl}, #{phoneMobileskinUrl}, #{phoneBigskinUrl}, #{wallpaperMobileskinUrl},
                 #{wallpaperBigskinUrl})
     </insert>
 

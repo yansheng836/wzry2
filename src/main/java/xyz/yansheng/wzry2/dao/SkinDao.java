@@ -25,6 +25,16 @@ public interface SkinDao {
     Skin queryById(Integer ename);
 
     /**
+     * 通过ID查询单条数据
+     *
+     * @param ename
+     *            主键
+     * @return 实例对象
+     */
+    Skin queryBy2Id(Integer ename,Integer skinId);
+
+
+    /**
      * 查询指定行数据
      *
      * @param offset

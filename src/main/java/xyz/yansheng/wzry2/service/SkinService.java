@@ -22,6 +22,15 @@ public interface SkinService {
     Skin queryById(Integer ename);
 
     /**
+     * 通过2个ID查询单条数据
+     *
+     * @param ename
+     *            主键
+     * @return 实例对象
+     */
+    Skin queryBy2Id(Integer ename,Integer skinId);
+
+    /**
      * 查询多条数据
      *
      * @param offset
