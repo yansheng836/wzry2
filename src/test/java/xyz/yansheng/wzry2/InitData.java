@@ -1,6 +1,5 @@
 package xyz.yansheng.wzry2;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -73,18 +72,14 @@ public class InitData {
     }
 
     /**
-     * 初始化Hero表的基本数据
+     * 初始化Skin表的基本数据
      */
     @Test
     public void initSkinData() {
         List<Hero> heroList = SpiderUtil.getHeroList();
         log.debug("MainController size:{}", heroList.size());
 
-        List<Skin> skinList = new ArrayList<>();
-
         for (Hero hero : heroList) {
-            log.debug(hero.toString());
-
             if (hero.getSkinName() != null) {
                 // 获取壁纸列表信息
                 String[] skinNames = hero.getSkinName().split("\\|");
@@ -119,4 +114,65 @@ public class InitData {
         }
 
     }
+
+    /**
+     * 更新Skin表的基本数据，采用探测法检查皮肤数量
+     */
+    @Test
+    public void updateSkinData() {
+        List<Hero> heroList = SpiderUtil.getHeroList();
+        for (Hero hero : heroList) {
+            // 猜测英雄的皮肤图片是否存在
+            for (int i = 0; i < 20; i++) {
+                Skin skin = new Skin(hero.getEname(), i + 1, "英雄新皮肤");
+                boolean isExist = SpiderUtil.isUrlRight2(skin.getPhoneSmallskinUrl());
+                if (isExist) {
+                    // 将数据插入到skin表
+                    Skin skin1 = skinService.queryBy2Id(hero.getEname(), i + 1);
+                    // 参看该数据是否在表中存在
+                    if (!skin.equals(skin1)) {
+                        skinService.insert(skin);
+                    } else {
+                        // skinService.update(skin);
+                        log.debug("skin已存在：{},{}", skin.getEname(), skin.getSkinId());
+                    }
+                } else {
+                    log.error(skin.toString());
+                    break;
+                }
+            }
+        }
+    }
+
+    /**
+     * 更新Hero表的基本数据，采用探测法检查英雄数量，https://pvp.qq.com/web201605/herodetail/518.shtml
+     */
+    @Test
+    public void updateHeroData() {
+
+        List<Hero> heroList = heroService.queryList();
+
+        String perfix = "https://pvp.qq.com/web201605/herodetail/";
+        String suffix = ".shtml";
+
+        for (int i = 100; i < 1000; i++) {
+            String url = perfix + i + suffix;
+            // 判断英雄详情页面是否存在
+            boolean isExist = SpiderUtil.isUrlRight2(url);
+            if (isExist) {
+                // 如果存在，判断数据库中是否存在该id，不存在则新增
+                Hero hero1 = heroService.queryById(i);
+//                Hero hero1 = heroList.get(i);
+                if (hero1 == null) {
+                    Hero hero = new Hero(i, "新英雄", "", 0, 0, 0, "");
+                    heroService.insert(hero);
+                } else {
+                    log.debug("该英雄已在数据库中：{}", url);
+                }
+            } else {
+                log.error("该英雄不存在：{}", url);
+            }
+        }
+    }
+
 }

@@ -33,6 +33,13 @@ public interface HeroService {
     List<Hero> queryAllByLimit(int offset, int limit);
 
     /**
+     * 查全表
+     *
+     * @return 对象列表
+     */
+    List<Hero> queryList();
+
+    /**
      * 新增数据
      *
      * @param hero

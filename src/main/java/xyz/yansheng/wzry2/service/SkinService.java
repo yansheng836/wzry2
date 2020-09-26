@@ -26,9 +26,11 @@ public interface SkinService {
      *
      * @param ename
      *            主键
+     * @param skinId
+     *            皮肤ID
      * @return 实例对象
      */
-    Skin queryBy2Id(Integer ename,Integer skinId);
+    Skin queryBy2Id(Integer ename, Integer skinId);
 
     /**
      * 查询多条数据

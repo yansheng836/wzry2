@@ -2,8 +2,8 @@ package xyz.yansheng.wzry2.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
 import xyz.yansheng.wzry2.bean.Hero;
 
 /**
@@ -42,6 +42,13 @@ public interface HeroDao {
      * @return 对象列表
      */
     List<Hero> queryAll(Hero hero);
+
+    /**
+     * 查全表
+     *
+     * @return 对象列表
+     */
+    List<Hero> queryList();
 
     /**
      * 新增数据

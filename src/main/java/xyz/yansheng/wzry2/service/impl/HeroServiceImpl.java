@@ -49,6 +49,16 @@ public class HeroServiceImpl implements HeroService {
     }
 
     /**
+     * 查全表
+     *
+     * @return 对象列表
+     */
+    @Override
+    public List<Hero> queryList() {
+        return this.heroDao.queryList();
+    }
+
+    /**
      * 新增数据
      *
      * @param hero
