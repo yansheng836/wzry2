@@ -1,12 +1,15 @@
 package xyz.yansheng.wzry2;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Wzry2ApplicationTests {
+public class Wzry2ApplicationTests {
 
     @Test
-    void contextLoads() {}
+    public void testMain() {
+        Assert.assertTrue(true);
+    }
 
 }

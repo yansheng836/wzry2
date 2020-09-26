@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.yansheng.wzry2.dao.SkinDao">
+
+    <resultMap type="xyz.yansheng.wzry2.bean.Skin" id="SkinMap">
+        <result property="ename" column="ename" jdbcType="INTEGER"/>
+        <result property="skinId" column="skin_id" jdbcType="INTEGER"/>
+        <result property="skinName" column="skin_name" jdbcType="VARCHAR"/>
+        <result property="phoneSmallskinUrl" column="phone_smallskin_url" jdbcType="VARCHAR"/>
+        <result property="phoneMobileskinUrl" column="phone_mobileskin_url" jdbcType="VARCHAR"/>
+        <result property="phoneBigskinUrl" column="phone_bigskin_url" jdbcType="VARCHAR"/>
+        <result property="wallpaperMobileskinUrl" column="wallpaper_mobileskin_url" jdbcType="VARCHAR"/>
+        <result property="wallpaperBigskinUrl" column="wallpaper_bigskin_url" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SkinMap">
+        select ename,
+               skin_id,
+               skin_name,
+               phone_smallskin_url,
+               phone_mobileskin_url,
+               phone_bigskin_url,
+               wallpaper_mobileskin_url,
+               wallpaper_bigskin_url
+        from wzry.skin
+        where ename = #{ename}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SkinMap">
+        select ename,
+               skin_id,
+               skin_name,
+               phone_smallskin_url,
+               phone_mobileskin_url,
+               phone_bigskin_url,
+               wallpaper_mobileskin_url,
+               wallpaper_bigskin_url
+        from wzry.skin
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="SkinMap">
+        select
+        ename, skin_id, skin_name, phone_smallskin_url, phone_mobileskin_url, phone_bigskin_url,
+        wallpaper_mobileskin_url, wallpaper_bigskin_url
+        from wzry.skin
+        <where>
+            <if test="ename != null">
+                and ename = #{ename}
+            </if>
+            <if test="skinId != null">
+                and skin_id = #{skinId}
+            </if>
+            <if test="skinName != null and skinName != ''">
+                and skin_name = #{skinName}
+            </if>
+            <if test="phoneSmallskinUrl != null and phoneSmallskinUrl != ''">
+                and phone_smallskin_url = #{phoneSmallskinUrl}
+            </if>
+            <if test="phoneMobileskinUrl != null and phoneMobileskinUrl != ''">
+                and phone_mobileskin_url = #{phoneMobileskinUrl}
+            </if>
+            <if test="phoneBigskinUrl != null and phoneBigskinUrl != ''">
+                and phone_bigskin_url = #{phoneBigskinUrl}
+            </if>
+            <if test="wallpaperMobileskinUrl != null and wallpaperMobileskinUrl != ''">
+                and wallpaper_mobileskin_url = #{wallpaperMobileskinUrl}
+            </if>
+            <if test="wallpaperBigskinUrl != null and wallpaperBigskinUrl != ''">
+                and wallpaper_bigskin_url = #{wallpaperBigskinUrl}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="ename" useGeneratedKeys="true">
+        insert into wzry.skin(skin_name, phone_smallskin_url, phone_mobileskin_url, phone_bigskin_url,
+                              wallpaper_mobileskin_url, wallpaper_bigskin_url)
+        values (#{skinName}, #{phoneSmallskinUrl}, #{phoneMobileskinUrl}, #{phoneBigskinUrl}, #{wallpaperMobileskinUrl},
+                #{wallpaperBigskinUrl})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update wzry.skin
+        <set>
+            <if test="skinName != null and skinName != ''">
+                skin_name = #{skinName},
+            </if>
+            <if test="phoneSmallskinUrl != null and phoneSmallskinUrl != ''">
+                phone_smallskin_url = #{phoneSmallskinUrl},
+            </if>
+            <if test="phoneMobileskinUrl != null and phoneMobileskinUrl != ''">
+                phone_mobileskin_url = #{phoneMobileskinUrl},
+            </if>
+            <if test="phoneBigskinUrl != null and phoneBigskinUrl != ''">
+                phone_bigskin_url = #{phoneBigskinUrl},
+            </if>
+            <if test="wallpaperMobileskinUrl != null and wallpaperMobileskinUrl != ''">
+                wallpaper_mobileskin_url = #{wallpaperMobileskinUrl},
+            </if>
+            <if test="wallpaperBigskinUrl != null and wallpaperBigskinUrl != ''">
+                wallpaper_bigskin_url = #{wallpaperBigskinUrl},
+            </if>
+        </set>
+        where ename = #{ename}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from wzry.skin
+        where ename = #{ename}
+    </delete>
+
+</mapper>

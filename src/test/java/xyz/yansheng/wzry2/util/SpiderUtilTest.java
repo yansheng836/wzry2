@@ -20,12 +20,13 @@ import lombok.extern.slf4j.Slf4j;
 public class SpiderUtilTest {
 
     /**
+     * 测试“判断URL对应的图片是否存在”
+     *
      * https://game.gtimg.cn/images/yxzj/img201606/heroimg/105/105-smallskin-1.jpg
      * https://game.gtimg.cn/images/yxzj/img201606/heroimg/105/105-smallskin-10.jpg
      */
     @Test
     public void testIsUrlRight() {
-        String[] urls = {};
         Assert.assertTrue(
             SpiderUtil.isUrlRight2("https://game.gtimg.cn/images/yxzj/img201606/heroimg/105/105-smallskin-1.jpg"));
         Assert.assertFalse(
