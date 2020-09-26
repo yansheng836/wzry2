@@ -1,6 +1,6 @@
 # Wzry2
 
-[![Build Status](https://travis-ci.org/yansheng836/wzry2.svg?branch=master)](https://travis-ci.org/yansheng836/wzry2)  [![codebeat badge](https://codebeat.co/badges/1fd0a446-fb1a-4d9b-bacd-e9a17041fd8b)](https://codebeat.co/projects/github-com-yansheng836-wzry2-master)  [![BCH compliance](https://bettercodehub.com/edge/badge/yansheng836/wzry2?branch=master)](https://bettercodehub.com/)  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/97b9825a94164e51bf29f3a5e6547796)](https://www.codacy.com/manual/yansheng836/wzry2/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yansheng836/wzry2&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/yansheng836/wzry2.svg?branch=master)](https://travis-ci.org/yansheng836/wzry2) [![codecov](https://codecov.io/gh/yansheng836/wzry2/branch/master/graph/badge.svg)](https://codecov.io/gh/yansheng836/wzry2)  [![codebeat badge](https://codebeat.co/badges/1fd0a446-fb1a-4d9b-bacd-e9a17041fd8b)](https://codebeat.co/projects/github-com-yansheng836-wzry2-master)  [![BCH compliance](https://bettercodehub.com/edge/badge/yansheng836/wzry2?branch=master)](https://bettercodehub.com/)  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/97b9825a94164e51bf29f3a5e6547796)](https://www.codacy.com/manual/yansheng836/wzry2/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yansheng836/wzry2&amp;utm_campaign=Badge_Grade)
 
 具体可参考：<https://github.com/yansheng836/wzry-wallpaper>
 
