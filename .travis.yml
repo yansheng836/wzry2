@@ -1,8 +1,10 @@
 language: java
-sudo: false
+sudo: true
 jdk:
   - openjdk8
-#-source 8
+
+before_install:
+  - chmod +x mvnw
 
 # codecov
 script: "mvn cobertura:cobertura"
