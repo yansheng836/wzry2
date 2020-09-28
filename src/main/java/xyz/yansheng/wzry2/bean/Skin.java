@@ -119,14 +119,14 @@ public class Skin {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o){
+    public boolean equals(Object object) {
+        if (this == object){
             return true;
         }
-        if (o == null || getClass() != o.getClass()){
+        if (object == null || getClass() != object.getClass()){
             return false;
         }
-        Skin skin = (Skin)o;
+        Skin skin = (Skin)object;
         return ename.equals(skin.ename) && skinId.equals(skin.skinId);
     }
 

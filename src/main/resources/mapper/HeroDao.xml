@@ -68,15 +68,20 @@
         </where>
     </select>
     <select id="queryList" resultMap="HeroMap">
-        select
-            ename, cname, title, new_type, hero_type, hero_type2, skin_name
+        select ename,
+               cname,
+               title,
+               new_type,
+               hero_type,
+               hero_type2,
+               skin_name
         from wzry.hero
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="ename">
-        insert into wzry.hero(ename,cname, title, new_type, hero_type, hero_type2, skin_name)
-        values (#{ename},#{cname}, #{title}, #{newType}, #{heroType}, #{heroType2}, #{skinName})
+        insert into wzry.hero(ename, cname, title, new_type, hero_type, hero_type2, skin_name)
+        values (#{ename}, #{cname}, #{title}, #{newType}, #{heroType}, #{heroType2}, #{skinName})
     </insert>
 
     <!--通过主键修改数据-->

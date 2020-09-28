@@ -29,6 +29,8 @@ public interface SkinDao {
      *
      * @param ename
      *            主键
+     * @param skinId
+     *             皮肤ID
      * @return 实例对象
      */
     Skin queryBy2Id(Integer ename,Integer skinId);

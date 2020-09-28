@@ -26,18 +26,8 @@ import xyz.yansheng.wzry2.bean.Hero;
 @Slf4j
 public class SpiderUtil {
 
-    public static void main(String[] args) {
-        List<Hero> heroList = getHeroList();
-        for (Hero hero : heroList) {
-            log.debug(hero.toString());
-        }
-    }
-
     /**
      * 获得（原始）英雄列表信息：https://pvp.qq.com/web201605/js/herolist.json
-     *
-     * @param
-     * @return
      */
     public static List<Hero> getHeroList() {
 
@@ -49,11 +39,10 @@ public class SpiderUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // log.debug(jsonListString);
 
         List<Hero> heroList = JSON.parseArray(jsonListString, Hero.class);
-        log.debug("size:{}", heroList.size());
         assert heroList != null;
+        log.debug("size:{}", heroList.size());
         // for (Hero hero : heroList) {
         // log.debug(hero.toString());
         // }
@@ -90,8 +79,8 @@ public class SpiderUtil {
     /**
      * 查看URL对应的图片是否存在
      *
-     * @param String imageUrl
-     * @return boolean
+     * @param imageUrl 图片URL
+     * @return boolean 存在返回true，不存在返回false
      */
     public static boolean isUrlRight2(String imageUrl) {
         try {
